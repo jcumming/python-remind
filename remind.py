@@ -80,7 +80,7 @@ class Remind(object):
         files = {}
         Remind._load_files(files, filename, lines)
 
-        cmd = ['remind', '-l', '-s%d' % self._month, '-b1', '-y', '-r',
+        cmd = ['remind', '-l', '-s%d' % self._month, '-b1', '-y', 
                filename, str(self._startdate)]
         try:
             rem = Popen(cmd, stdin=PIPE, stdout=PIPE).communicate(input=lines.encode('utf-8'))[0].decode('utf-8')
